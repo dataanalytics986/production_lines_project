@@ -11,7 +11,7 @@ This project is designed to monitor and track the status of **multiple productio
 This solution is structured to answer key business questions regarding production line performance:
 
 1.  **Production Line Specific Analysis:** For a specified production line (e.g., "gr-np-47"), generate a table with the following columns:
-    * `start_timestamp`: The timestamp marking the **initiation** of the production process[cite: 2].
+    * `start_timestamp`: The timestamp marking the **initiation** of the production process.
     * `stop_timestamp`: The timestamp marking the **termination** of the production process after the last initiation.
     * `duration`: The **total duration** of the production process.
 2.  **Overall Floor Uptime/Downtime:** Calculate the **total uptime and downtime** for the entire production floor.
