@@ -1,4 +1,4 @@
-# 🏭 Production Lines Project
+# Production Lines Project
 
 ## Short Description
 
