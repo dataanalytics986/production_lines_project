@@ -1,12 +1,12 @@
 # 🏭 Production Lines Project
 
-## 🌟 Short Description
+## Short Description
 
 [cite_start]This project is designed to monitor and track the status of **multiple production lines** within a production floor[cite: 1]. [cite_start]By keeping a detailed record of each production line's status, the system calculates critical **Production KPIs** (Key Performance Indicators) for the production manager[cite: 1].
 
 ---
 
-## ✨ Core Features (Business Questions Addressed)
+## Core Features (Business Questions Addressed)
 
 This solution is structured to answer key business questions regarding production line performance:
 
@@ -29,7 +29,7 @@ The project utilizes the following technologies:
 
 ---
 
-## 🚀 Installation Instructions
+## Installation Instructions
 
 To set up the project locally and begin calculating KPIs, follow these two main steps:
 
@@ -38,18 +38,10 @@ To set up the project locally and begin calculating KPIs, follow these two main 
 
 ---
 
-## 👤 Author
+## Author
 
 * [cite_start]**Name:** Dimitrios Koromilaw [cite: 8]
 * [cite_start]**GitHub Profile:** [https://github.com/dataanalytics986](https://github.com/dataanalytics986) [cite: 8]
 * [cite_start]**Email:** dimkoromilas@gmail.com [cite: 8]
 
----
 
-## 🤝 Contribution Guidelines
-
-*(Add your specific contribution guidelines here, such as how to submit a pull request or report bugs.)*
-
-## 📜 License
-
-*(Specify the license for your project here, e.g., MIT, Apache 2.0)*
