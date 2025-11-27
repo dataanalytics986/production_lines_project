@@ -163,7 +163,7 @@ try:
     
     query = """
                             SELECT *
-                            FROM [test].[dbo].[session_table] 
+                            FROM [production_lines_db].[dbo].[session_table] 
                             """
 
     # Execute query
@@ -273,4 +273,5 @@ else:
         1  gr-np-47                       3400
 		    
     """
+
 
