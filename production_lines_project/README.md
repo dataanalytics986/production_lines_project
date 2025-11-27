@@ -28,3 +28,10 @@ Assuming you have cloned the project repository or created the file structure, n
 
 ```bash
 pip install -e .
+
+---
+
+## kpi_DEMO.py
+
+This self-contained Python script connects directly to the SQL Server, retrieves the necessary session_table data, and immediately executes all three KPI functions to address the specified business questions, without requiring the pre-built KPI library package.
+
