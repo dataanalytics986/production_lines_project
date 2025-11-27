@@ -21,17 +21,23 @@ This solution is structured to answer key business questions regarding productio
 
 ## Data Strategy for Efficient BI & KPIs
 
-To ensure **efficient computation of the KPIs** and effective presentation on a Business Intelligence (BI) dashboard environment, the following strategic tactics are employed:
+To optimize data retrieval for Business Intelligence environments and ensure efficient KPI computation, a two-tiered data strategy is implemented:
 
-* **Raw Data Storage:** Raw log data, upon their arrival, are automatically stored on the source table named **`production_lines_event_logs`**. This table has the columns: `production_line_id`, `status`, and `timestamp`.
-* **Aggregated BI Table (`session_table`):** For BI purposes and the most efficient processing, BI environments will only query on an aggregated table derived from the source, named **`session_table`**.
-* **`session_table` Structure:** This table is created as a **materialized table** and consists of the columns: `session_id` (as unique identifier), `production_line_id`, `start_timestamp`, `stop_timestamp`, `duration`, and `working_status`.
-* **Session Tracking:** The `session_table` tracks and contains only the **completed session cycles** (start-stop sequence) according to the timestamp order.
-    * Sessions with `working_status=1` are considered **uptime working sessions**.
-    * Sessions with `working_status=0` are considered **downtime sessions** between two uptime sessions.
-* **Duration Measurement:** The `duration` column is the time in seconds corresponding to each type of session.
-* **BI Querying:** BI analysts only see and query the `session_table`.
-* **Update Frequency:** The `session_table` is updated via a **stored procedure** every **15 minutes** from the newly data stored at the `production_lines_event_logs` source table.
+### 1. Source Data Layer
+
+* **Source Table:** Raw log data is automatically stored in the **`production_lines_event_logs`** table upon arrival.
+* **Columns:** This table contains the raw event data: `production_line_id`, `status`, and `timestamp`.
+
+### 2. Aggregated BI Layer
+
+* **Target Table:** BI environments query a materialized, aggregated table named **`session_table`**. This ensures the most efficient processing.
+* **Structure:** The `session_table` includes: `session_id` (unique identifier), `production_line_id`, `start_timestamp`, `stop_timestamp`, `duration`, and `working_status`.
+* **Session Logic:**
+    * It tracks only **completed session cycles** (start-stop sequence) based on timestamp order.
+    * `working_status=1` denotes an **uptime working session**.
+    * `working_status=0` denotes a **downtime session** occurring between two uptime sessions.
+    * `duration` is the time in seconds corresponding to each session type.
+* **Update Process:** The `session_table` is refreshed via a **stored procedure** every **15 minutes** using the newly stored data from the source table. BI analysts query this table exclusively.
 
 ## Technologies Used
 
