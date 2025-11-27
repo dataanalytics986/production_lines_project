@@ -19,6 +19,20 @@ This solution is structured to answer key business questions regarding productio
 
 ---
 
+## Implemantation Tactics for Efficient Computation for BI purposes
+
+To ensure **efficient computation of the KPIs** and effective presentation on a Business Intelligence (BI) dashboard environment, the following strategic tactics are employed:
+
+* **Raw Data Storage:** Raw log data, upon their arrival, are automatically stored on the source table named **`production_lines_event_logs`**. This table has the columns: `production_line_id`, `status`, and `timestamp`.
+* **Aggregated BI Table (`session_table`):** For BI purposes and the most efficient processing, BI environments will only query on an aggregated table derived from the source, named **`session_table`**.
+* **`session_table` Structure:** This table is created as a **materialized table** and consists of the columns: `session_id` (as unique identifier), `production_line_id`, `start_timestamp`, `stop_timestamp`, `duration`, and `working_status`.
+* **Session Tracking:** The `session_table` tracks and contains only the **completed session cycles** (start-stop sequence) according to the timestamp order.
+    * Sessions with `working_status=1` are considered **uptime working sessions**.
+    * Sessions with `working_status=0` are considered **downtime sessions** between two uptime sessions.
+* **Duration Measurement:** The `duration` column is the time in seconds corresponding to each type of session.
+* **BI Querying:** BI analysts only see and query the `session_table`.
+* **Update Frequency:** The `session_table` is updated via a **stored procedure** every **15 minutes** from the newly data stored at the `production_lines_event_logs` source table.
+
 ## Technologies Used
 
 The project utilizes the following technologies:
