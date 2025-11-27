@@ -25,7 +25,7 @@ To optimize data retrieval for Business Intelligence environments and ensure eff
 
 ### 1. Source Data Layer
 
-* **Source Table:** Raw log data is automatically stored in the **`production_lines_event_logs`** table upon arrival.
+* **Source Table:** Raw log data are automatically stored in the **`production_lines_event_logs`** table upon arrival.
 * **Columns:** This table contains the raw event data: `production_line_id`, `status`, and `timestamp`.
 
 ### 2. Aggregated BI Layer
