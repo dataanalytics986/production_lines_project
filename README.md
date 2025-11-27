@@ -19,7 +19,7 @@ This solution is structured to answer key business questions regarding productio
 
 ---
 
-## Data Modeling Tactics leading to efficient computation for BI purposes
+## Data Strategy for Efficient BI & KPIs
 
 To ensure **efficient computation of the KPIs** and effective presentation on a Business Intelligence (BI) dashboard environment, the following strategic tactics are employed:
 
