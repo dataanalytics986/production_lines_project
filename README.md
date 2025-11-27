@@ -37,7 +37,7 @@ To optimize data retrieval for Business Intelligence environments and ensure eff
     * `working_status=1` denotes an **uptime working session**.
     * `working_status=0` denotes a **downtime session** occurring between two uptime sessions.
     * `duration` is the time in seconds corresponding to each session type.
-* **Update Process:** The `session_table` is refreshed via a **stored procedure** every **15 minutes** using the newly stored data from the source table. BI analysts query this table exclusively.
+* **Update Process:** The `session_table` is refreshed via a **stored procedure** named refresh_session_table every **15 minutes** using the newly stored data from the source table. BI analysts query this table exclusively.
 
 ## Technologies Used
 
