@@ -33,7 +33,7 @@ The project utilizes the following technologies:
 
 To set up the project locally and begin calculating KPIs, follow these two main steps:
 
-1.  **Database Setup:** The user must first execute the provided **SQL scripts** to create the necessary database. This database is where the production lines' event logs will be stored.
+1.  **Database Setup:** The user must first make sure that the Microsoft SQL Server is properly installed on his system. Secondly, user must execute the provided **SQL scripts** to create the necessary database, tables and routines for writing/updating the tables. This database and tables is where the production lines' event logs will be stored.
 2.  **Python Library Setup:** The user must set up the Python library on the host system. This ensures that the **KPI functions** can be imported into the user's main Python script for execution.
 
 ---
